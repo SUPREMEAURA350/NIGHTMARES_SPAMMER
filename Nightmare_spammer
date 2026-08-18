@@ -107,12 +107,12 @@ local MinBtnCorner = Instance.new("UICorner")
 MinBtnCorner.CornerRadius = UDim.new(0, 6)
 MinBtnCorner.Parent = MinimizeBtn
 
--- 3. Minimized Floating Icon with Animated RGB Border
+-- 3. Minimized Floating Icon (Changed Background Color to Black)
 local MinimizedIcon = Instance.new("TextButton")
 MinimizedIcon.Name = "MinimizedIcon"
 MinimizedIcon.Size = UDim2.new(0, 55, 0, 55)
 MinimizedIcon.Position = UDim2.new(0, 20, 0.4, 0)
-MinimizedIcon.BackgroundColor3 = Color3.fromRGB(220, 35, 35)
+MinimizedIcon.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
 MinimizedIcon.Text = "🔱"
 MinimizedIcon.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinimizedIcon.TextSize = 28
