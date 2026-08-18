@@ -1,4 +1,4 @@
--- KAISER_V3 SPAMMER Script for Brookhaven RP (100% Custom UI)
+-- NIGHTMARES_SPAMMER Script for Brookhaven RP (100% Custom UI)
 -- Created by KING_KAISER | Username: SUPREME_AURA350
 
 local Players = game:GetService("Players")
@@ -22,10 +22,10 @@ local function onExecution()
         if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
             local generalChannel = TextChatService.TextChannels:FindFirstChild("RBXGeneral")
             if generalChannel then
-                generalChannel:SendAsync("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 🔱⚔️KAISER_V3 SPAMMER LOADED⚔️🔱")
+                generalChannel:SendAsync("@@@@@@@@@@@@-_-_-_-_-_-_-_-_-_-_-_-_-//-_-/========[👑NIGHTMARES SPAMMER EXECUTED👑]FOR H8RS🌸🌸")
             end
         else
-            ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 🔱⚔️KAISER_V3 SPAMMER LOADED⚔️🔱", "All")
+            ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("@@@@@@@@@@@@-_-_-_-_-_-_-_-_-_-_-_-_-//-_-/========[👑NIGHTMARES SPAMMER EXECUTED👑]FOR H8RS🌸🌸", "All")
         end
     end)
 
@@ -113,7 +113,7 @@ MinimizedIcon.Name = "MinimizedIcon"
 MinimizedIcon.Size = UDim2.new(0, 55, 0, 55)
 MinimizedIcon.Position = UDim2.new(0, 20, 0.4, 0)
 MinimizedIcon.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
-MinimizedIcon.Text = "🔱"
+MinimizedIcon.Text = "👑"
 MinimizedIcon.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinimizedIcon.TextSize = 28
 MinimizedIcon.Font = Enum.Font.SourceSansBold
@@ -166,7 +166,7 @@ local LeftRoleLabel = Instance.new("TextLabel")
 LeftRoleLabel.Size = UDim2.new(0.5, -20, 0, 45)
 LeftRoleLabel.Position = UDim2.new(0, 15, 0, 48)
 LeftRoleLabel.BackgroundTransparency = 1
-LeftRoleLabel.Text = "NIGHTMARES OWNER\nALFA"
+LeftRoleLabel.Text = "👑NIGHTMARES OWNER👑\nALFA"
 LeftRoleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 LeftRoleLabel.TextSize = 15
 LeftRoleLabel.Font = Enum.Font.SourceSansBold
@@ -177,7 +177,7 @@ local RightRoleLabel = Instance.new("TextLabel")
 RightRoleLabel.Size = UDim2.new(0.5, -20, 0, 45)
 RightRoleLabel.Position = UDim2.new(0.5, 5, 0, 48)
 RightRoleLabel.BackgroundTransparency = 1
-RightRoleLabel.Text = "NIGHTMARES CO-LEADER\nKAISER"
+RightRoleLabel.Text = "🔱NIGHTMARES CO-LEADER🔱\nKAISER"
 RightRoleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 RightRoleLabel.TextSize = 15
 RightRoleLabel.Font = Enum.Font.SourceSansBold
@@ -190,7 +190,7 @@ TargetBox.Name = "TargetBox"
 TargetBox.Size = UDim2.new(1, -40, 0, 40)
 TargetBox.Position = UDim2.new(0, 20, 0, 102)
 TargetBox.BackgroundColor3 = Color3.fromRGB(32, 32, 45)
-TargetBox.PlaceholderText = "Target Player Name..."
+TargetBox.PlaceholderText = "Target Clan Name..."
 TargetBox.PlaceholderColor3 = Color3.fromRGB(130, 130, 150)
 TargetBox.Text = ""
 TargetBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -241,7 +241,7 @@ local CreditsLabel = Instance.new("TextLabel")
 CreditsLabel.Size = UDim2.new(1, 0, 0, 35)
 CreditsLabel.Position = UDim2.new(0, 0, 1, -45)
 CreditsLabel.BackgroundTransparency = 1
-CreditsLabel.Text = "script Created by KING_KAISER\nUsername: SUPREME_AURA350"
+CreditsLabel.Text = "NIGHTMARES_SPAMMER Created by KING_KAISER\nUsername: SUPREME_AURA350"
 CreditsLabel.TextColor3 = Color3.fromRGB(160, 160, 175)
 CreditsLabel.TextSize = 13
 CreditsLabel.Font = Enum.Font.SourceSans
@@ -265,13 +265,13 @@ local function startSpamLoop()
 
     task.spawn(function()
         while _G.LoopMessages do
-            local target = (_G.TargetPlayer and _G.TargetPlayer ~= "") and _G.TargetPlayer or "💗KAISER💗 H8RS(🔱)"
+            local target = (_G.TargetPlayer and _G.TargetPlayer ~= "") and _G.TargetPlayer or "👑NIGHTMARES👑 H8RS(😝)"
 
             local messages = {
-                target .. " TMKX MEH DARK POWER KAISER VOID WORM KAISER GOD FACT WAVE KAISER PARALLEL PRIME(💎)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
-                target .. " TMKX МЕН PARALLEL DARK KAISER HYPER POWER WAVE PRIME KAISER FACT KAISER HYPER(😹)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
-                target .. " TMKX MEH KAISER WORM PARALLEL GOD WAVE HYPER VOID KAISER WAVE WAVE(🙈)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
-                target .. " TMKX MEH KAISER WORM PARALLEL LEGEND WAVE HYPER VOID KAISER WAVE POWER(💥)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+                target .. " TBKX MEH DARK POWER NIGHTMARES VOID WORM NIGHTMARES GOD ALFA WAVE NIGHTMARES PARALLEL PRIME(💎)[//===//////===//////===//////===//////===//////===//////===//////===//////===//]",
+                target .. " TMKX МARE PARALLEL DARK NIGHTMARES HYPER ALFA WAVE PRIME NIGHTMARES FACT NIGHTMARES HYPER(😹)[//===//////===//////===//////===//////===//////===//////===//////===//////===//]",
+                target .. " TMKX MEH NIGHTMARES WORM PARALLEL GOD ALFA HYPER VOID NIGHTMARES WAVE WAVE(🙈)[//===//////===//////===//////===//////===//////===//////===//////===//////===//]",
+                target .. " TBKX MARE NIGHTMARES WORM PARALLEL LEGEND ALFA HYPER VOID NIGHTMARES WAVE POWER(💥)[//===//////===//////===//////===//////===//////===//////===//////===//////===//]"
             }
 
             for _, msg in ipairs(messages) do
