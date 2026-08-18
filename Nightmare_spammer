@@ -46,7 +46,7 @@ ScreenGui.Name = "KaiserHubGui"
 ScreenGui.ResetOnSpawn = false
 ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
 
--- Main Frame Window (Increased dimensions to 400x320)
+-- Main Frame Window
 local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
 MainFrame.Size = UDim2.new(0, 400, 0, 320)
@@ -61,7 +61,7 @@ local MainCorner = Instance.new("UICorner")
 MainCorner.CornerRadius = UDim.new(0, 10)
 MainCorner.Parent = MainFrame
 
--- Animated RGB Border
+-- Animated RGB Border for Main Window
 local MainBorder = Instance.new("UIStroke")
 MainBorder.Name = "MainBorder"
 MainBorder.Color = Color3.fromRGB(255, 0, 0)
@@ -92,31 +92,6 @@ Title.Font = Enum.Font.SourceSansBold
 Title.TextXAlignment = Enum.TextXAlignment.Left
 Title.Parent = Header
 
--- Smooth RGB Rainbow Animation Task
-task.spawn(function()
-    local rainbowColors = {
-        Color3.fromRGB(255, 0, 0),    -- Red
-        Color3.fromRGB(255, 127, 0),  -- Orange
-        Color3.fromRGB(255, 255, 0),  -- Yellow
-        Color3.fromRGB(0, 255, 0),    -- Green
-        Color3.fromRGB(0, 0, 255),    -- Blue
-        Color3.fromRGB(139, 0, 255)   -- Purple
-    }
-    
-    local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
-    
-    while true do
-        for _, color in ipairs(rainbowColors) do
-            local strokeTween = TweenService:Create(MainBorder, tweenInfo, {Color = color})
-            local titleTween = TweenService:Create(Title, tweenInfo, {TextColor3 = color})
-            
-            strokeTween:Play()
-            titleTween:Play()
-            task.wait(1)
-        end
-    end
-end)
-
 -- Window Minimize Button (-)
 local MinimizeBtn = Instance.new("TextButton")
 MinimizeBtn.Size = UDim2.new(0, 28, 0, 28)
@@ -132,7 +107,7 @@ local MinBtnCorner = Instance.new("UICorner")
 MinBtnCorner.CornerRadius = UDim.new(0, 6)
 MinBtnCorner.Parent = MinimizeBtn
 
--- Minimized Floating Icon
+-- 3. Minimized Floating Icon with Animated RGB Border
 local MinimizedIcon = Instance.new("TextButton")
 MinimizedIcon.Name = "MinimizedIcon"
 MinimizedIcon.Size = UDim2.new(0, 55, 0, 55)
@@ -151,7 +126,42 @@ local IconCorner = Instance.new("UICorner")
 IconCorner.CornerRadius = UDim.new(0, 12)
 IconCorner.Parent = MinimizedIcon
 
--- 3. Leadership Titles (Left: Owner ALFA | Right: Co-Leader KAISER)
+-- RGB Border Stroke for Minimized Icon
+local IconBorder = Instance.new("UIStroke")
+IconBorder.Name = "IconBorder"
+IconBorder.Color = Color3.fromRGB(255, 0, 0)
+IconBorder.Thickness = 3
+IconBorder.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+IconBorder.Parent = MinimizedIcon
+
+-- Smooth RGB Rainbow Animation Loop (Main Window Border, Title Text & Minimized Icon Border)
+task.spawn(function()
+    local rainbowColors = {
+        Color3.fromRGB(255, 0, 0),    -- Red
+        Color3.fromRGB(255, 127, 0),  -- Orange
+        Color3.fromRGB(0, 0, 255),    -- Blue
+        Color3.fromRGB(0, 255, 0),    -- Green
+        Color3.fromRGB(255, 255, 0),  -- Yellow
+        Color3.fromRGB(139, 0, 255)   -- Purple
+    }
+    
+    local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+    
+    while true do
+        for _, color in ipairs(rainbowColors) do
+            local strokeTween = TweenService:Create(MainBorder, tweenInfo, {Color = color})
+            local titleTween = TweenService:Create(Title, tweenInfo, {TextColor3 = color})
+            local iconBorderTween = TweenService:Create(IconBorder, tweenInfo, {Color = color})
+            
+            strokeTween:Play()
+            titleTween:Play()
+            iconBorderTween:Play()
+            task.wait(1)
+        end
+    end
+end)
+
+-- 4. Leadership Titles
 local LeftRoleLabel = Instance.new("TextLabel")
 LeftRoleLabel.Size = UDim2.new(0.5, -20, 0, 45)
 LeftRoleLabel.Position = UDim2.new(0, 15, 0, 48)
@@ -174,7 +184,7 @@ RightRoleLabel.Font = Enum.Font.SourceSansBold
 RightRoleLabel.TextXAlignment = Enum.TextXAlignment.Right
 RightRoleLabel.Parent = MainFrame
 
--- 4. Target Player Name Input Box
+-- 5. Target Player Name Input Box
 local TargetBox = Instance.new("TextBox")
 TargetBox.Name = "TargetBox"
 TargetBox.Size = UDim2.new(1, -40, 0, 40)
@@ -197,7 +207,7 @@ TargetBox:GetPropertyChangedSignal("Text"):Connect(function()
     _G.TargetPlayer = TargetBox.Text
 end)
 
--- 5. Control Buttons (Start / Stop)
+-- 6. Control Buttons (Start / Stop)
 local StartBtn = Instance.new("TextButton")
 StartBtn.Size = UDim2.new(0, 170, 0, 45)
 StartBtn.Position = UDim2.new(0, 20, 0, 155)
@@ -237,7 +247,7 @@ CreditsLabel.TextSize = 13
 CreditsLabel.Font = Enum.Font.SourceSans
 CreditsLabel.Parent = MainFrame
 
--- 6. UI Minimize & Restore Logic
+-- 7. UI Minimize & Restore Logic
 MinimizeBtn.MouseButton1Click:Connect(function()
     MainFrame.Visible = false
     MinimizedIcon.Visible = true
@@ -248,7 +258,7 @@ MinimizedIcon.MouseButton1Click:Connect(function()
     MinimizedIcon.Visible = false
 end)
 
--- 7. Continuous Message Loop Logic
+-- 8. Continuous Message Loop Logic
 local function startSpamLoop()
     if _G.LoopMessages then return end
     _G.LoopMessages = true
